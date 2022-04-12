@@ -27,3 +27,4 @@
  */
 
 import './app';
+import 'windi.css';
