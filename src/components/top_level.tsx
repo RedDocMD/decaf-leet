@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Button } from "./button";
 import { InputBox } from "./input_box";
 
 export default function TopLevel() {
@@ -45,6 +46,11 @@ export default function TopLevel() {
           textCb={outputCb}
           ref={outputRef}
         />
+      </div>
+      <div className="flex justify-around mt-4">
+        <Button label="Clear Input" onClick={clearInput} />
+        <Button label="Clear Expected" onClick={clearExpected} />
+        <Button label="Clear Output" onClick={clearOutput} />
       </div>
     </div>
   );
