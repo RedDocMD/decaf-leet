@@ -23,6 +23,14 @@ export default function TopLevel() {
 
   return (
     <div className="container mx-auto">
+      <div className="flex pt-5 pb-3 items-center">
+        <input
+          type="text"
+          className="flex-1 border-2 border-gray-300 rounded-md px-2 py-1 mr-5"
+          placeholder="Path"
+        />
+        <Button label="Browse" />
+      </div>
       <div className="flex justify-between">
         <InputBox
           rowCnt={rowCnt}
