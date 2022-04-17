@@ -5,6 +5,7 @@ import { InputBox } from "./input_box";
 export default function TopLevel() {
   const rowCnt = 8;
 
+  // Input-expected-output and its related variables
   const [inputText, setInputText] = React.useState("");
   const [outputText, setOutputText] = React.useState("");
   const [expectedText, setExpectedText] = React.useState("");
@@ -21,6 +22,12 @@ export default function TopLevel() {
   const clearExpected = () => (expectedRef.current.value = "");
   const clearOutput = () => (outputRef.current.value = "");
 
+  // Path variables
+  const [path, setPath] = React.useState("");
+
+  const pathChangeCb = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setPath(event.target.value);
+
   return (
     <div className="container mx-auto">
       <div className="flex pt-5 pb-3 items-center">
@@ -28,6 +35,8 @@ export default function TopLevel() {
           type="text"
           className="flex-1 border-2 border-gray-300 rounded-md px-2 py-1 mr-5"
           placeholder="Path"
+          defaultValue={path}
+          onChange={pathChangeCb}
         />
         <Button label="Browse" />
       </div>
